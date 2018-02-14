@@ -4,8 +4,6 @@ import time
 import bokeh_code as bc
 import optimization as ozt
 
-moz_client = Mozscape('', '')
-
 """ Stream Functions """
 
 # create writes
@@ -58,11 +56,3 @@ def stream_second_competitor(timestamp, links):
         print("There was an error with second writes")
         new_second_data = dict(time=[timestamp], ext_root_dom_links=[0])
         bc.c2_erdl.stream(new_second_data, rollover=10)
-
-
-#    bc.d_one.stream(new_client_data, rollover=10)
-#    bc.d_two.stream(new_first_data, rollover=10)
-#    bc.d_thr.stream(new_second_data, rollover=10)
-#    print(bc.d_one.data)
-#    print(bc.d_two.data)
-#    print(bc.d_thr.data)

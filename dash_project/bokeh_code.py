@@ -1,10 +1,11 @@
+# enables writing to the document
 from bokeh.io import curdoc
 from bokeh.models import ColumnDataSource, HoverTool
 from bokeh.plotting import figure
 from bokeh.models.widgets import Button, TextInput
 from bokeh.layouts import layout
-import CallAndStream as cast
 from datetime import datetime
+# import test.py
 import test as ts
 # NOTE: database still needs to be configured into this prototype to make subtle api calls to prevent throttle
 
@@ -22,7 +23,7 @@ p1_hover = HoverTool(tooltips="""
     </div>
 """)
 
-# create Tools object to assign to tools attribute within
+# create Tools object to assign to tools attribute into the fiture
 # figure object
 first_plot_tools = [p1_hover]
 # figure declarations
@@ -63,12 +64,13 @@ def stream_new_data_from_api():
     second_c_links = ts.call_and_assign_data(comp_two_addr.value)
     new_second_data = dict(time=[call_timestamp], ext_root_dom_links=[second_c_links])
     try:
+        # stream data to ColumnDataSources
         client_erdl.stream(new_client_data, rollover=10)
         c1_erdl.stream(new_first_data, rollover=10)
         c2_erdl.stream(new_second_data, rollover=10)
     except Exception as e:
         print(e)
-        print("Problem with Stream")
+        print("Writing to ColumnDataSources was throttled -- error is in stream_new_data_from_api() function")
 
     # on_click() - we then go through 'test' object - we execute the api function with the url's entered into the TextInput widgets
 

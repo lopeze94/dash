@@ -6,13 +6,7 @@ from bokeh.layouts import layout
 import CallAndStream as cast
 from datetime import datetime
 import test as ts
-
-"""
-Note:
-
-We are NOT yet using domain_authority_score in the dictionaries
-
-"""
+# NOTE: database still needs to be configured into this prototype to make subtle api calls to prevent throttle
 
 
 # assign hover to an assignment of an attribute of
@@ -44,7 +38,6 @@ c2_erdl = ColumnDataSource(data=dict(time=[], ext_root_dom_links=[]))
 
 
 """Bokeh Code For Figure 'f'"""
-# 2 glyphs per source
 # plot for external root domain links
 # client
 f.line(x='time', y='ext_root_dom_links', line_color='red', line_width=2, source=client_erdl)

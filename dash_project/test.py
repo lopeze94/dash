@@ -4,7 +4,7 @@ import time
 import bokeh_code as bc
 import Optimization as ozt
 
-moz_client = Mozscape('mozscape-5ff03d5969', '5d698b4a4945ff9af6d3392fb495a563')
+moz_client = Mozscape('', '')
 
 """ Stream Functions """
 

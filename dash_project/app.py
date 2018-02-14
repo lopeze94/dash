@@ -1,3 +1,5 @@
+# flask app currently dismissed
+"""
 from flask import Flask, render_template
 from bokeh.embed import autoload_server
 from bokeh.client import pull_session
@@ -13,3 +15,4 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=False)
+"""

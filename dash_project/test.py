@@ -2,7 +2,7 @@ from mozscape import Mozscape
 from datetime import datetime
 import time
 import bokeh_code as bc
-import Optimization as ozt
+import optimization as ozt
 
 moz_client = Mozscape('', '')
 

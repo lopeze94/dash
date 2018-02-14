@@ -8,18 +8,14 @@ moz_client = Mozscape('', '')
 
 """ Stream Functions """
 
-""" For Modularization Purposes - Examine Possibilities Of Using 3 Lists of x & y within a single dictionary -- will enable a loop
-for the update function """
-
 # create writes
-# create a functiin which only handles writes
+# create a function which only handles writes
 # it should only write to the database for that specific url
 # or the variables to be loaded onto the plot for most recent
 # could these writes go into an array? .push()?
 
 
-def call_and_assign_data(passed_value):
-    url = passed_value
+def call_and_assign_data(url):
     try:
         time.sleep(1)
         print("sleeping..zzz.")
@@ -30,19 +26,7 @@ def call_and_assign_data(passed_value):
         print("Error Occured during call_and_assign_data")
         print(e)
 
-
-"""
-You were trying to keep api calls, writes to CDS,
-and the global variables in order
-
-NOTICE we are adding in datetime.now() only after
-the very first execution of api calls, which is for client.
-
-This way the plot will display the same
-datetime for all data given from a single call
-"""
-
-
+# replace all functions beneath, with a single function taking the address of the ColumnDataSources being written to
 def stream_client(timestamp, links):
     try:
         new_client_data = dict(time=[timestamp], ext_root_dom_links=[links])

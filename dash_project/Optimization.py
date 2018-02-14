@@ -5,10 +5,8 @@ from mozscape import Mozscape
 import time
 # an Instance of the Optimization_Return_Functions class
 
-"""Always Remember Cooper's Lecture On Modularization"""
 
-
-moz_client = Mozscape('mozscape-5ff03d5969', '5d698b4a4945ff9af6d3392fb495a563')
+moz_client = Mozscape('', '')
 
 """Through constructors for each selection option -- we can use same url
 for all functions"""
